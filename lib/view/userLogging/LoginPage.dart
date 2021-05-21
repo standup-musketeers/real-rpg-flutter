@@ -23,24 +23,28 @@ class LoginPageMobile extends BaseModelWidget<LoginPageVM> {
   @override
   Widget build(BuildContext context, LoginPageVM model) {
     model.initPostBuild(context);
-    var width = MediaQuery.of(context).size.width;
-    var height = MediaQuery.of(context).size.height;
     return Scaffold(
-        body: Align(
-            alignment: Alignment.center,
-            child: Column(
-              children: [
-                Container(
-                    margin: const EdgeInsets.all(0.0),
-                    color: Colors.white,
-                    child: Container(child: Text("Login!"))),
-                FlatButton(
-                  onPressed: () async {
-                    await model.login(context);
-                  },
-                  child: Text("Press me to login"),
-                ),
-              ],
-            )));
+      body: Align(
+        alignment: Alignment.center,
+        child: Align(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                  margin: const EdgeInsets.all(0.0),
+                  color: Colors.white,
+                  child: Container(child: Text("Login!"))),
+              FlatButton(
+                onPressed: () async {
+                  await model.login(context);
+                },
+                child: Text("Press me to login"),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }

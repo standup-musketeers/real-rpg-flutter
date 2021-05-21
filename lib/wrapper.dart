@@ -13,6 +13,7 @@ class Wrapper extends StatefulWidget {
 
 class _WrapperState extends State<Wrapper> {
   User currentUser;
+
   @override
   Widget build(BuildContext context) {
     final userApi = Provider.of<UserApi>(context);
@@ -21,13 +22,14 @@ class _WrapperState extends State<Wrapper> {
         currentUser = user;
       });
     });
+
     if (currentUser == null) {
       return LoginPage();
     } else {
-      if (currentUser.currentUserState == userState.LOGIN){
+      if (currentUser.currentUserState == userState.LOGIN) {
         return MainInterface();
-      } else {
-       return LoginPage();
+      } else if (currentUser.currentUserState == userState.LOGOUT) {
+        return LoginPage();
       }
     }
   }

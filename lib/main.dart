@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:real_rpg/services/userApi.dart';
 import 'package:real_rpg/splashScreen.dart';
+import 'package:real_rpg/view/mainInterface/addAction/addAction.dart';
 import 'package:real_rpg/view/userLogging/LoginPage.dart';
 import 'package:real_rpg/wrapper.dart';
 
@@ -42,7 +43,8 @@ class _MyAppState extends State<MyApp> {
           home: SplashScreen(),
           routes: {
             Wrapper.routeName: (context) => Wrapper(),
-            LoginPage.routeName: (context) => LoginPage()
+            LoginPage.routeName: (context) => LoginPage(),
+            AddAction.routeName: (context) => AddAction()
           },
         ));
   }
