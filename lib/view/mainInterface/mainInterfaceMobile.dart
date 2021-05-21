@@ -6,6 +6,7 @@ import 'mainInterfaceVM.dart';
 class MainInterfaceMobile extends BaseModelWidget<MainInterfaceVM> {
   @override
   Widget build(BuildContext context, MainInterfaceVM model) {
+    model.initPostBuild(context);
     var width = MediaQuery.of(context).size.width;
     var height = MediaQuery.of(context).size.height;
     return Scaffold(
@@ -15,19 +16,20 @@ class MainInterfaceMobile extends BaseModelWidget<MainInterfaceVM> {
           leading: FlatButton(
             child: Row(
               children: [
-                Container(
-                ),
+                Container(),
                 Container(
                   height: height * 0.04,
-                  padding: EdgeInsets.only(left: width * 0.03, top: height * 0.005),
-                  child: Text("Logout",
-                    style: TextStyle(
-                    ),
+                  padding:
+                      EdgeInsets.only(left: width * 0.03, top: height * 0.005),
+                  child: Text(
+                    "Logout",
+                    style: TextStyle(),
                   ),
                 ),
               ],
             ),
-            onPressed: () {
+            onPressed: () async {
+              await model.logout();
             },
           ),
           elevation: 3.0,
@@ -36,12 +38,9 @@ class MainInterfaceMobile extends BaseModelWidget<MainInterfaceVM> {
         body: Align(
           alignment: Alignment.center,
           child: Container(
-            margin: const EdgeInsets.all(0.0),
-            color: Colors.white,
-            child: Container(
-              child: Text("hi")
-            )
-          ),
+              margin: const EdgeInsets.all(0.0),
+              color: Colors.white,
+              child: Container(child: Text("hi"))),
         ));
   }
 }
