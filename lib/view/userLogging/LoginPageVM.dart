@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:real_rpg/services/userApi.dart';
+import 'package:provider/provider.dart';
 
-class MainInterfaceVM extends ChangeNotifier {
+class LoginPageVM extends ChangeNotifier {
   UserApi userApi;
   BuildContext context;
-
   void initialise() async {
     notifyListeners();
   }
@@ -15,7 +14,7 @@ class MainInterfaceVM extends ChangeNotifier {
     this.context = context;
   }
 
-  Future<void> logout() async {
-    await this.userApi.logout();
+  Future<void> login(BuildContext context) async {
+    await this.userApi.login();
   }
 }

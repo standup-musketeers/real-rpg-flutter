@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:real_rpg/services/userApi.dart';
 
-class MainInterfaceVM extends ChangeNotifier {
+class AddActionVM extends ChangeNotifier {
   UserApi userApi;
   BuildContext context;
 
