@@ -35,7 +35,7 @@ class LoginPageMobile extends BaseModelWidget<LoginPageVM> {
                   margin: const EdgeInsets.all(0.0),
                   color: Colors.white,
                   child: Container(child: Text("Login!"))),
-              FlatButton(
+              TextButton(
                 onPressed: () async {
                   await model.login(context);
                 },
