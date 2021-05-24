@@ -30,12 +30,12 @@ class AddActionMobile extends BaseModelWidget<AddActionVM> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            FlatButton(
+            TextButton(
                 onPressed: () {
                   Navigator.pop(context);
                 },
                 child: Text("Cancel")),
-            FlatButton(
+            TextButton(
                 onPressed: () {
                   Navigator.pop(
                     context,

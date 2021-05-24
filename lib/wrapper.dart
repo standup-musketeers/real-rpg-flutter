@@ -30,6 +30,8 @@ class _WrapperState extends State<Wrapper> {
         return MainInterface();
       } else if (currentUser.currentUserState == userState.LOGOUT) {
         return LoginPage();
+      } else {
+        return LoginPage();
       }
     }
   }

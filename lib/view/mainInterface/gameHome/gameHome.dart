@@ -1,6 +1,5 @@
 import 'dart:ui';
 
-import 'package:flame/flame.dart';
 import 'package:flame/gestures.dart';
 import 'package:flame/game.dart';
 import 'package:flame/sprite.dart';
@@ -28,7 +27,6 @@ class GameHome extends BaseGame with DoubleTapDetector, TapDetector {
     Paint bgPaint = Paint();
     bgPaint.color = Color(0xff112233);
     canvas.drawRect(bgRect, bgPaint);
-
     // paint background
     // this.backGround.render(canvas);
   }
@@ -47,7 +45,7 @@ class BackGround {
   Rect bgRect;
 
   BackGround(this.game) {
-    bgSprite = Sprite('images/mountainBackground/parallax-mountain-bg.png');
+    bgSprite = Sprite('assets/images/mountainBackground/parallax-mountain-bg.png');
     bgRect = Rect.fromLTWH(
       0,
       game.screenSize.height - (game.tileSize * 23),

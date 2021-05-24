@@ -55,7 +55,7 @@ class _MyAppState extends State<MyApp> {
 void initAssets(){
   Flame.images.loadAll(
     <String>[
-      'mountainBackground/parallax-mountain-bg.png'
+      'assets/images/mountainBackground/parallax-mountain-bg.png'
     ]
   );
 }

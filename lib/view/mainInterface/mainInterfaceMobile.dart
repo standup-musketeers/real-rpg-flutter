@@ -15,7 +15,7 @@ class MainInterfaceMobile extends BaseModelWidget<MainInterfaceVM> {
       appBar: AppBar(
         toolbarHeight: height * 0.07,
         leadingWidth: width * 0.4,
-        leading: FlatButton(
+        leading: TextButton(
           child: Row(
             children: [
               Container(
@@ -52,7 +52,7 @@ class MainInterfaceMobile extends BaseModelWidget<MainInterfaceVM> {
               child: Text("hi"),
             ),
           ),
-          FlatButton(
+          TextButton(
               onPressed: () {
                 Navigator.push(
                   context,

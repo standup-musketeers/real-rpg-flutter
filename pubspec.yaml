@@ -34,18 +34,14 @@ dependencies:
 
   flame: 0.29.4
 
-  shared_preferences: ^0.5.7+3
+  shared_preferences: 2.0.5
 
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
-# For information on the generic Dart part of this file, see the
-# following page: https://dart.dev/tools/pub/pubspec
-
-# The following section is specific to Flutter.
 flutter:
   uses-material-design: true
   assets:
-    - assets/images/
+    - assets/images/mountainBackground/parallax-mountain-bg.png
