@@ -7,9 +7,10 @@ import 'mainInterfaceVM.dart';
 class MainInterfaceMobile extends BaseModelWidget<MainInterfaceVM> {
   @override
   Widget build(BuildContext context, MainInterfaceVM model) {
-    model.initPostBuild(context);
     var width = MediaQuery.of(context).size.width;
     var height = MediaQuery.of(context).size.height;
+    Size gameSize = Size(width, height);
+    model.initPostBuild(context, gameSize);
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: height * 0.07,
@@ -17,7 +18,6 @@ class MainInterfaceMobile extends BaseModelWidget<MainInterfaceVM> {
         leading: FlatButton(
           child: Row(
             children: [
-              Container(),
               Container(
                 height: height * 0.04,
                 padding:
@@ -37,9 +37,14 @@ class MainInterfaceMobile extends BaseModelWidget<MainInterfaceVM> {
         backgroundColor: Colors.white,
       ),
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
+          Container(
+            height: height * 0.6,
+            width: width,
+            child: model.gameHome.widget,
+          ),
           Container(
             margin: const EdgeInsets.all(0.0),
             color: Colors.white,

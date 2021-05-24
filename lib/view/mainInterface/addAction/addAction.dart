@@ -3,7 +3,6 @@ import 'package:real_rpg/baseClass/base_model_widget.dart';
 import 'package:real_rpg/baseClass/base_widget.dart';
 import 'package:real_rpg/baseClass/orientation_layout.dart';
 import 'package:real_rpg/baseClass/screen_type_layout.dart';
-import 'package:real_rpg/view/mainInterface/mainInterface.dart';
 
 import 'addActionVM.dart';
 
@@ -33,21 +32,13 @@ class AddActionMobile extends BaseModelWidget<AddActionVM> {
           children: [
             FlatButton(
                 onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => MainInterface(),
-                    ),
-                  );
+                  Navigator.pop(context);
                 },
                 child: Text("Cancel")),
             FlatButton(
                 onPressed: () {
-                  Navigator.push(
+                  Navigator.pop(
                     context,
-                    MaterialPageRoute(
-                      builder: (context) => MainInterface(),
-                    ),
                   );
                 },
                 child: Text("Insert one and go back")),
