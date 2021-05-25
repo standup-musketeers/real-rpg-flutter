@@ -32,9 +32,9 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.0
 
-  flame: 0.29.4
+  flame: 0.22.1
 
-  shared_preferences: 2.0.5
+#  shared_preferences: 1.0.5
 
 
 dev_dependencies:
@@ -42,6 +42,14 @@ dev_dependencies:
     sdk: flutter
 
 flutter:
+
+  # The following line ensures that the Material Icons font is
+  # included with your application, so that you can use the icons in
+  # the material Icons class.
   uses-material-design: true
   assets:
     - assets/images/mountainBackground/parallax-mountain-bg.png
+    - assets/images/mountainBackground/parallax-mountain-foreground-trees.png
+    - assets/images/mountainBackground/parallax-mountain-mountains.png
+    - assets/images/mountainBackground/parallax-mountain-trees.png
+    - assets/images/mountainBackground/parallax-mountain-mountain-far.png

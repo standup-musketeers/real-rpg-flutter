@@ -2,13 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:real_rpg/services/userApi.dart';
 import 'package:real_rpg/view/mainInterface/addAction/addAction.dart';
-import 'package:real_rpg/view/mainInterface/mainInterface.dart';
 import 'package:real_rpg/view/userLogging/LoginPage.dart';
 import 'package:real_rpg/wrapper.dart';
-import 'package:flame/flame.dart';
 
 void main() {
-  initAssets();
   WidgetsFlutterBinding.ensureInitialized();
   UserApi userApi = UserApi();
   runApp(MyApp(userApi: userApi));
@@ -42,7 +39,7 @@ class _MyAppState extends State<MyApp> {
               );
             });
           },
-          home: MainInterface(),
+          home: Wrapper(),
           routes: {
             Wrapper.routeName: (context) => Wrapper(),
             LoginPage.routeName: (context) => LoginPage(),
@@ -50,12 +47,4 @@ class _MyAppState extends State<MyApp> {
           },
         ));
   }
-}
-
-void initAssets(){
-  Flame.images.loadAll(
-    <String>[
-      'assets/images/mountainBackground/parallax-mountain-bg.png'
-    ]
-  );
 }

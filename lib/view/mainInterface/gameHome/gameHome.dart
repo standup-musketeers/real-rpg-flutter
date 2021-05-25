@@ -25,10 +25,10 @@ class GameHome extends BaseGame with DoubleTapDetector, TapDetector {
   void render(Canvas canvas) {
     Rect bgRect = Rect.fromLTWH(0, 0, screenSize.width, screenSize.height);
     Paint bgPaint = Paint();
-    bgPaint.color = Color(0xff112233);
+    // bgPaint.color = Color(0xff112233);
     canvas.drawRect(bgRect, bgPaint);
     // paint background
-    // this.backGround.render(canvas);
+    this.backGround.render(canvas);
   }
 
   void update(double t) {}
@@ -42,20 +42,36 @@ class GameHome extends BaseGame with DoubleTapDetector, TapDetector {
 class BackGround {
   final GameHome game;
   Sprite bgSprite;
+  Sprite bgMountainFar;
+  Sprite bgForegroundTrees;
+  Sprite bgMountains;
+  Sprite bgMountainsFar;
   Rect bgRect;
+  Rect bgTreeRect;
+  Rect bgMountainReg;
 
   BackGround(this.game) {
-    bgSprite = Sprite('assets/images/mountainBackground/parallax-mountain-bg.png');
+    bgSprite = Sprite('mountainBackground/parallax-mountain-bg.png');
+    bgMountains = Sprite('mountainBackground/parallax-mountain-mountains.png');
+    bgForegroundTrees =
+        Sprite('mountainBackground/parallax-mountain-trees.png');
     bgRect = Rect.fromLTWH(
-      0,
-      game.screenSize.height - (game.tileSize * 23),
-      game.tileSize * 9,
-      game.tileSize * 23,
+      -game.tileSize * 3,
+      game.screenSize.height - (game.tileSize * 17.5),
+      game.tileSize * 19,
+      game.tileSize * 13,
+    );
+    bgMountainReg = Rect.fromLTWH(
+      -game.tileSize * 1.9,
+      game.screenSize.height - (game.tileSize * 17),
+      game.tileSize * 25,
+      game.tileSize * 14,
     );
   }
 
   void render(Canvas c) {
-    // bgSprite.renderRect(c, bgRect);
+    bgSprite.renderRect(c, bgRect);
+    bgMountains.renderRect(c, bgMountainReg);
   }
 
   void update(double t) {}

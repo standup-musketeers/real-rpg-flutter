@@ -11,7 +11,11 @@ class UserApi {
     return _singleton;
   }
 
-  UserApi._internal({this.uid});
+  UserApi._internal({this.uid}){
+    this.onAuthStateChangedController = StreamController<User>.broadcast(
+        onListen: this.getAuthStateData
+    );
+  }
 
   StreamController<User> onAuthStateChangedController;
 
